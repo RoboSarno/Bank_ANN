@@ -5,13 +5,18 @@ name = "pypi"
 
 [packages]
 requests = "*"
+numpy = "*"
+pandas = "*"
+streamlit = "*"
+sklearn = "*"
+tensorflow = "*"
 
 [dev-packages]
 numpy = "*"
 pandas = "*"
-tensorflow = "*"
 streamlit = "*"
 sklearn = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.9"
