@@ -133,8 +133,9 @@ st.write("""
          ##### The individual you specified will: 
          """)
 predict = st.sidebar.button("Predict")
-nn.make_ANN()
+
 if predict:
+    nn.make_ANN()
     stay_or_leave = nn.test_Individual(test_individual)
     if stay_or_leave:
         st.write("""
