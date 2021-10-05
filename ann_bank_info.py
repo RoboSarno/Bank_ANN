@@ -10,7 +10,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-@st.experimental_memo   
+@st.experimental_singleton   
 class ANN:
     def __init__(self):
         self.X = 0
