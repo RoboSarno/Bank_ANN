@@ -24,16 +24,19 @@ class ANN:
         self.le = None
         self.sc = None
         
-    # Getters 
+    # Printers
     def print_Dataset(self):
         st.write(self.dataset)
         
-    
+    # Getters 
+    def get_Dataset(self):
+        return self.dataset
         
+    
     def test_Individual(self, individual):
-        print(individual)
+        # print(individual)
         ans = self.ann.predict(self.sc.transform([individual])) > 0.5
-        print(ans)
+        return ans
         
     # Setters
     def read_CSV(self):
@@ -80,6 +83,7 @@ st.write("""
 nn = ANN()
 nn.read_CSV()
 nn.print_Dataset()
+
 nn.fix_Data()
 
 
@@ -138,7 +142,7 @@ st.write("""
 predict = st.sidebar.button("Predict")
 
 if predict:
-    st.cache()
+    # st.cache()
     nn.make_ANN()
     stay_or_leave = nn.test_Individual(test_individual)
     if stay_or_leave:
