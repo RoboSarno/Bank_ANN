@@ -9,7 +9,8 @@ from sklearn.preprocessing import OneHotEncoder
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-       
+
+@st.experimental_memo   
 class ANN:
     def __init__(self):
         self.X = 0
@@ -26,6 +27,8 @@ class ANN:
     # Getters 
     def print_Dataset(self):
         st.write(self.dataset)
+        
+    
         
     def test_Individual(self, individual):
         print(individual)
@@ -135,6 +138,7 @@ st.write("""
 predict = st.sidebar.button("Predict")
 
 if predict:
+    st.cache()
     nn.make_ANN()
     stay_or_leave = nn.test_Individual(test_individual)
     if stay_or_leave:
